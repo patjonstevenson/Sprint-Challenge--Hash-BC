@@ -24,7 +24,9 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
-* What is the worse case scenario if you try to extend the storage size of a dynamic array?
+    An array has a runtime complexity of O(1) for access, O(n) to add or remove from the front, and potentially O(1) to add or remove from the back, but also likely O(n), if there is not space in memory adjacent to the last bucket.
+* What is the worst case scenario if you try to extend the storage size of a dynamic array?
+    Well, the worst case scenario I'm imagining is that you can't add space in place and have to reallocate memory for the newly sized array. This would involve copying over every element in the array.
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
  
