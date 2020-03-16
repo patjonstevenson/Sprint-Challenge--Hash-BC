@@ -24,11 +24,17 @@ This sprint challenge is divided up into three parts:  Hash tables coding, block
 
 Explain in detail the workings of a dynamic array:
 * What is the runtime complexity to access an array, add or remove from the front, and add or remove from the back?
-* What is the worse case scenario if you try to extend the storage size of a dynamic array?
+    An array has a runtime complexity of O(1) for access, O(n) to add or remove from the front, and potentially O(1) to add or remove from the back, but also likely O(n), if there is not space in memory adjacent to the last bucket.
+* What is the worst case scenario if you try to extend the storage size of a dynamic array?
+    Well, the worst case scenario I'm imagining is that you can't add space in place and have to reallocate memory for the newly sized array. This would involve copying over every element in the array.
 
 Explain how a blockchain is structured. What are the blocks, what is the chain? How is the data organized?
+    The blocks are hash tables containing an index, a timestamp, a list of transactions, a proof used to mine the block, and a cryptographic hash of the previous block.
+    The chain is a list of blocks, each chained together by the hashes of the previous block.
+    The data is organized in a collection of some sort, like an array or list. Each block contains a hash of the previous block.
  
 Explain how proof of work functions. How does it operate. How does this protect the chain from attack. What kind of attack is possible?
+    Proof of work involves solving a difficult problem that takes time and can only be solved using brute force. If it were not for proof of work, an attacker could spoof the entire chain by just doing their own hashes and making a chain that's a little longer than the others, which could pass as the real chain. However, with proof of work, they would need to remake all the proofs. It would be very difficult for an attacker to do as much work and spend as much time as all the miners in the world who have been working to create the proofs. In order to successfully attack a blockchain, an attacker would need to have 50% of the share of miners, or maybe a supercomputer.
 
 ## Project Set Up
 
